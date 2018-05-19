@@ -15,8 +15,11 @@
 
 @section('sidebar-menu')
   <ul class="nav metismenu" id="side-menu" style="padding-left:0px;">
-    <li class="active">
+    <li {{{ Request::is('home') ? 'class=active' : '' }}}>
       <a href="{{ route('home') }}"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
+    </li>
+    <li {{{ Request::is('categories') ? 'class=active' : '' }}}>
+      <a href="{{ route('categories.index') }}"><i class="fa fa-book"></i> <span class="nav-label">Kategori</span></a>
     </li>
   </ul>
 @endsection
