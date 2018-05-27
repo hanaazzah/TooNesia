@@ -48,7 +48,7 @@
   <hr/>
   <div class="row">
     <div class="col-md-6">
-        Copyright Example Company
+        TooNesia
     </div>
     <div class="col-md-6 text-right">
        <small>© {{  DATE('Y') }}</small>
