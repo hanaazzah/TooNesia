@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PortalController@index')->name('portal.index');
+Route::get('/details', 'PortalController@detail')->name('portal.details');
+Route::get('/views', 'PortalController@view')->name('portal.view');
 
 Auth::routes();
 

@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Atnic">
 
-  <title>@yield('title', config('app.name', 'WSA-Analyzer'))</title>
+  <title>@yield('title', config('app.name', 'TooNesia'))</title>
 
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -416,16 +416,15 @@
           </div>
      </section>
 
-
-<section id="contact" class="gray-section contact">
-     <div class="container">
-          <div class="row">
-               <div class="col-lg-12 text-right m-t-lg m-b-lg">
-                    <p><strong>TooNesia &copy; Hana Azzah Nur Arifah 2018</strong></p>
-               </div>
-          </div>
-     </div>
-</section>
+    <section id="contact" class="gray-section contact">
+         <div class="container">
+              <div class="row">
+                   <div class="col-lg-12 text-right m-t-lg m-b-lg">
+                        <p><strong>TooNesia &copy; Hana Azzah Nur Arifah 2018</strong></p>
+                   </div>
+              </div>
+         </div>
+    </section>
 @yield('content')
 
 @section('scripts')

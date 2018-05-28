@@ -11,7 +11,7 @@
             <span class="block m-t-xs">
               <strong class="font-bold">@yield('user-name', 'Admin')</strong>
             </span>
-            <span class="text-muted text-xs block">@yield('user-text', 'Web Developer')<b class="caret"></b></span>
+            <span class="text-muted text-xs block">@yield('user-text', 'Administrator')<b class="caret"></b></span>
           </span>
         </a>
         <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -28,7 +28,7 @@
         </ul>
       </div>
       <div class="logo-element">
-        IN+
+        ToN
       </div>
     </li>
   </ul>
