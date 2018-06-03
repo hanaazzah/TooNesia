@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Services\Categories;
 
@@ -19,7 +19,7 @@ class CategoryService
 
 	public function browse()
 	{
-		return $this->model->paginate();
+		return $this->model->orderBy('id', 'DESC')->paginate();
 	}
 
 	public function show($id)

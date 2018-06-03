@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\Categories\CategoryService;
-use App\Http\Request\CategoryRequest;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
-    
+
     /**
      * @var $service;
      */
@@ -35,19 +35,19 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-    	$category = $this->service->store($request);
+    	$category = $this->service->store($request->toArray());
     	return redirect()->route('categories.index')->with('status', 'Data Berhasil di Simpan');
-    }	
+    }
 
     public function edit($id)
     {
     	$category = $this->service->show($id);
-    	return view('panels.categories.edit', compact('category'));
+    	return view('panels.categories.update', compact('category'));
     }
 
     public function update($id, CategoryRequest $request)
     {
-    	$this->service->update($id, $request);
+    	$this->service->update($id, $request->toArray());
     	return redirect()->route('categories.index')->with('status', 'Data Berhasil di Update');
     }
 
