@@ -21,5 +21,8 @@
     <li {{{ Request::is('categories') ? 'class=active' : '' }}}>
       <a href="{{ route('categories.index') }}"><i class="fa fa-book"></i> <span class="nav-label">Kategori</span></a>
     </li>
+    <li {{{ Request::is('comics') ? 'class=active' : '' }}}>
+      <a href="{{ route('comics.index') }}"><i class="fa fa-book"></i> <span class="nav-label">Komik</span></a>
+    </li>
   </ul>
 @endsection

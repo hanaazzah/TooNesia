@@ -43,4 +43,9 @@ class CategoryService
 		return $this->model->destroy($id);
 	}
 
+	public function getIdNameCategory()
+	{
+		return $this->model->get()->pluck('name', 'id');
+	}
+
 }

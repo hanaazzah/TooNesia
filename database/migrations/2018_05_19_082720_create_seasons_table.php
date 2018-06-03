@@ -16,8 +16,8 @@ class CreateSeasonsTable extends Migration
         Schema::create('seasons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('season_name');
-            $table->text('cover_image');
-            $table->text('file_comic');
+            $table->text('cover_image')->nullable();
+            $table->text('file_comic')->nullable();
             $table->integer('comic_id')->unsigned();
             $table->foreign('comic_id')->references('id')->on('comics')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/images/comics/*
+/public/images/seasons/*
+/public/seasons/*.pdf
 /storage/*.key
 /vendor
 /.idea

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    
+
     protected $table = "categories";
 
     /**
@@ -15,4 +15,9 @@ class Category extends Model
     protected $fillable = [
     	'name'
     ];
+
+    public function comics()
+    {
+        return $this->hasMany(\App\Services\Comics\Comic::class);
+    }
 }

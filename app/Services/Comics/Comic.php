@@ -18,11 +18,11 @@ class Comic extends Model
 
     public function category()
     {
-        return $this->hasOne(App\Services\Categories\Category::class);
+        return $this->hasOne(\App\Services\Categories\Category::class, 'id', 'category_id');
     }
 
     public function seasons()
     {
-        return $this->hasMany(App\Services\Seasons\Season::class);
+        return $this->hasMany(\App\Services\Seasons\Season::class);
     }
 }

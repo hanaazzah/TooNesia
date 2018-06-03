@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h4>Tambah Kategori</h4>
+                <h4>Update Kategori</h4>
             </div>
             <div class="ibox-content">
                     {!! Form::open([
@@ -21,6 +21,7 @@
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Update">
+                        <a href="{{ route('categories.index') }}" class="btn btn-warning">Kembali</a>
                     </div>
                     {!! Form::close() !!}
             </div>

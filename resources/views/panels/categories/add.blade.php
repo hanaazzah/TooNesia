@@ -21,6 +21,7 @@
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Simpan">
+                        <a href="{{ route('categories.index') }}" class="btn btn-warning">Kembali</a>
                     </div>
                     {!! Form::close() !!}
             </div>
