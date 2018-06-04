@@ -55,7 +55,7 @@ class ComicService
 
 	public function setLimitComic($limit)
 	{
-		return $this->model->limit($limit)->get();
+		return $this->model->limit($limit)->orderBy('id', 'DESC')->get();
 	}
 
 }

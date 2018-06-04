@@ -59,8 +59,15 @@ class ComicController extends Controller
     	return view('panels.comics.update', compact('comic', 'categories'));
     }
 
-    public function update($id, ComicRequest $request)
+    public function update($id, Request $request)
     {
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+        ]);
+        
         if($request->has('image')){
             $image = $request->file('image');
             $input['image'] = 'public/images/comics/'.time().'.'.$image->getClientOriginalExtension();

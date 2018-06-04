@@ -125,7 +125,7 @@
                                     <div class="p-lg">
                                         <a href="{{ url('details') }}/{{ $value->id }}"><img class="img-responsive img-shadow" src="{{ env('APP_URL') }}/{{ str_replace('public/', '', $value->image) }}" alt=""></a>
                                     </div>
-                                    <p><a href="#">{{ $value->category->name }}</a></p>
+                                    <p><a href="{{ url('details') }}/{{ $value->id}}">{{ $value->category->name }}</a></p>
                                     <p><a href="{{ url('details') }}/{{ $value->id }}"><strong>{{ $value->title }}</strong></a></p>
                                     <i class="fa fa-eye"> 200.000</i>
                                     <i class="fa fa-heart"> 200</i>
@@ -163,10 +163,10 @@
                                                 <div class="col-sm-3">
                                                     <div class="m-t-md">
                                                         <div class="p-lg">
-                                                            <a href=""><img class="img-responsive img-shadow" src="{{ env('APP_URL') }}/{{ str_replace('public/', '', $v->image) }}" alt=""></a>
+                                                            <a href="{{ url('details') }}/{{ $v->id}}"><img class="img-responsive img-shadow" src="{{ env('APP_URL') }}/{{ str_replace('public/', '', $v->image) }}" alt=""></a>
                                                         </div>
-                                                        <p><a href="#">{{$value->name}}</a></p>
-                                                        <p><a href="#"><strong>{{$v->title}}</strong></a></p>
+                                                        <p><a href="{{ url('details') }}/{{$v->id}}">{{$value->name}}</a></p>
+                                                        <p><a href="{{ url('details') }}/{{$v->id}}"><strong>{{$v->title}}</strong></a></p>
                                                         <i class="fa fa-eye"> 200.000</i>
                                                         <i class="fa fa-heart"> 200</i>
                                                         <i class="fa fa-comment"> 56766</i>
@@ -194,10 +194,10 @@
                             @foreach($popular_comics as $key => $value)
                             <div class="m-t-md side">
                                 <div class="p-lg">
-                                    <a href=""><img class="img-responsive img-shadow" src="{{ env('APP_URL') }}/{{ str_replace('public/', '', $value->image) }}" alt=""></a>
+                                    <a href="{{ url('details') }}/{{ $value->id}}"><img class="img-responsive img-shadow" src="{{ env('APP_URL') }}/{{ str_replace('public/', '', $value->image) }}" alt=""></a>
                                 </div>
-                                <p><a href="#">{{ $value->category->name }}</a></p>
-                                <p><a href="#"><strong>{{ $value->title }}</strong></a></p>
+                                <p><a href="{{ url('details') }}/{{ $value->id}}">{{ $value->category->name }}</a></p>
+                                <p><a href="{{ url('details') }}/{{ $value->id}}"><strong>{{ $value->title }}</strong></a></p>
                                 <i class="fa fa-eye"> 200.000</i>
                                 <i class="fa fa-heart"> 200</i>
                                 <i class="fa fa-comment"> 56766</i>

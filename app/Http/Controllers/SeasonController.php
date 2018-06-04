@@ -60,10 +60,37 @@ class SeasonController extends Controller
     	return view('panels.seasons.update', compact('season'));
     }
 
-    public function update($id, ComicRequest $request)
+    public function update($id, Request $request)
     {
-    	$this->service->update($id, $request->toArray());
-    	return redirect()->route('seasons.index')->with('status', 'Data Berhasil di Update');
+
+        $this->validate($request, [
+            'season_name' => 'required',
+            'cover_image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'file_comic' => 'mimes:pdf',
+        ]);
+
+        if($request->has('cover_image')){
+            $image = $request->file('cover_image');
+            $input['cover_image'] = 'public/images/seasons/'.time().'.'.$image->getClientOriginalExtension();
+
+            $destinationPath = public_path('/images/seasons');
+
+            $image->move($destinationPath, $input['cover_image']);
+        }
+
+        if($request->has('file_comic')){
+            $image = $request->file('file_comic');
+            $input['file_comic'] = 'public/images/seasons/'.time().'.'.$image->getClientOriginalExtension();
+
+            $destinationPath = public_path('/seasons');
+
+            $image->move($destinationPath, $input['file_comic']);
+        }
+
+        $input['season_name'] = $request->season_name;
+    	$this->service->update($id, $input);
+        $url = 'seasons/'.$request->comic_id;
+    	return redirect($url)->with('status', 'Data Berhasil di Update');
     }
 
     public function delete($uri, $id)
