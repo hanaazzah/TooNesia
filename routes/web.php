@@ -13,7 +13,7 @@
 
 Route::get('/', 'PortalController@index')->name('portal.index');
 Route::get('/details/{id}', 'PortalController@detail')->name('portal.details');
-Route::get('/views', 'PortalController@view')->name('portal.view');
+Route::get('/views/{id}/{comic_id}', 'PortalController@view')->name('portal.view');
 
 Auth::routes();
 

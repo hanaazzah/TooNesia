@@ -29,12 +29,15 @@ class PortalController extends Controller
     public function detail($id)
     {
         $seasons = $this->season->browse($id);
-        return view('details', compact('seasons'));
+        $title = $this->comic->show($id)->first()->title;
+        return view('details', compact('seasons', 'title', 'id'));
     }
 
-    public function view()
+    public function view($id, $comic_id)
     {
-        return view('view');
+        $seasons_view = $this->season->show($id);
+        $title =  $this->comic->show($comic_id)->first()->title;
+        return view('view', compact('seasons_view', 'title'));
     }
 
     private function setTabContent()

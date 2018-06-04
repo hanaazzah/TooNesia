@@ -82,7 +82,7 @@
                <div class="item active">
                     <div class="container">
                          <div class="carousel-caption">
-                              <h1>TooNesia</h1>
+                              <h1>{{ $title }}</h1>
                          </div>
                     </div>
                     <!-- Set background for slide in css -->
@@ -96,38 +96,21 @@
           <div class="row">
                <div class="col-sm-9">
                     <div class="ibox float-e-margins">
-
-                        <div class="ibox-content text-left p-md">
+                      @if($seasons->count() > 0)
+                        @foreach($seasons as $key => $value)
+                        <div class="ibox-content p-md">
                             <div class="col-sm-3">
                                 <div class="m-t-md">
                                     <div class="p-lg">
-                                        <a href=""><img class="img-responsive img-shadow" src="http://via.placeholder.com/350x240" alt=""></a>
+                                        <a href="{{ url('views') }}/{{ $value->id }}/{{ $id }}"><img class="img-responsive img-shadow" src="{{ env('APP_URL') }}/{{ str_replace('public/', '', $value->cover_image) }}" alt=""></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="m-t-md">
                                     <div class="p-lg">
-                                        <p><a href="#"><strong>(SEASON) - Episode 1</strong></a></p>
-                                        <p><a href="#">Tanggal Update</a></p>
-                                        <i class="fa fa-eye"> 200.000</i>
-                                        <i class="fa fa-heart"> 200</i>
-                                        <i class="fa fa-comment"> 56766</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="m-t-md">
-                                    <div class="p-lg">
-                                        <a href=""><img class="img-responsive img-shadow" src="http://via.placeholder.com/350x240" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="m-t-md">
-                                    <div class="p-lg">
-                                        <p><a href="#"><strong>(SEASON) - Episode 1</strong></a></p>
-                                        <p><a href="#">Tanggal Update</a></p>
+                                        <p><a href="{{ url('views') }}/{{ $value->id }}/{{ $id }}"><strong>{{ $value->season_name }}</strong></a></p>
+                                        <p>{{ $value->created_at }}</a></p>
                                         <i class="fa fa-eye"> 200.000</i>
                                         <i class="fa fa-heart"> 200</i>
                                         <i class="fa fa-comment"> 56766</i>
@@ -135,7 +118,10 @@
                                 </div>
                             </div>
                         </div>
-
+                        @endforeach
+                      @else
+                      <div>Belum ada Season yang di temukan</div>
+                      @endif
                     </div>
                 </div>
                <div class="col-sm-3">

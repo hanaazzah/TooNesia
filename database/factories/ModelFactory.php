@@ -32,7 +32,7 @@ $factory->define(App\Services\Seasons\Season::class, function (Faker $faker) {
     return [
         'season_name' => $faker->sentence,
         'cover_image' => $faker->image('public/images/seasons', 400,300),
-        'file_comic' => $faker->imageUrl,
+        'file_comic' => 'seasons/1528073365.pdf',
         'comic_id' => App\Services\Comics\Comic::all()->random()->id
     ];
 });

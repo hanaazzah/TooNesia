@@ -39,7 +39,7 @@ class SeasonController extends Controller
 
         if($request->has('file_comic')){
             $image = $request->file('file_comic');
-            $input['file_comic'] = 'public/images/seasons/'.time().'.'.$image->getClientOriginalExtension();
+            $input['file_comic'] = 'seasons/'.time().'.'.$image->getClientOriginalExtension();
 
             $destinationPath = public_path('/seasons');
 
@@ -80,7 +80,7 @@ class SeasonController extends Controller
 
         if($request->has('file_comic')){
             $image = $request->file('file_comic');
-            $input['file_comic'] = 'public/images/seasons/'.time().'.'.$image->getClientOriginalExtension();
+            $input['file_comic'] = 'seasons/'.time().'.'.$image->getClientOriginalExtension();
 
             $destinationPath = public_path('/seasons');
 

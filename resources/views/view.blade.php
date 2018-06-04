@@ -86,7 +86,7 @@
                <div class="item active">
                     <div class="container">
                          <div class="carousel-caption">
-                              <h1>Judul Komik</h1>
+                              <h1>{{ $title }}</h1>
                          </div>
                     </div>
                     <!-- Set background for slide in css -->
@@ -105,7 +105,7 @@
                        </div>
                        <div class="ibox-content">
                            <figure>
-                               <iframe src="http://www.youtube.com/embed/bwj2s_5e12U" frameborder="0" allowfullscreen="" data-aspectratio="0.8211764705882353" style="width: 100%; height: 100%;"></iframe>
+                               <iframe src="{{ env('APP_URL') }}/{{ str_replace('public/', '', $seasons_view->file_comic) }}" frameborder="0" allowfullscreen="" data-aspectratio="0.8211764705882353" style="width: 100%; height: 750px;"></iframe>
                            </figure>
                        </div>
                    </div>
