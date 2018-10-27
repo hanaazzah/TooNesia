@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                        {!! Form::label('Judul Komik') !!}
+                        {!! Form::label('Deskripsi Komik') !!}
                         {!! Form::textarea('description', old('description'), ['class' => 'form-control', 'placeholder' => 'Deskripsi'])!!}
                         <span class="help-block">
                             <strong>{{ $errors->first('description') }}</strong>

@@ -43,4 +43,9 @@ class SeasonService
 		return $this->model->destroy($id);
 	}
 
+	public function getSeasonByComic($id)
+	{
+		return $this->model->where('comic_id', $id)->get();
+	}
+
 }

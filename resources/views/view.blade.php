@@ -116,50 +116,20 @@
                             <h5>Season</h5>
                         </div>
                         <div class="ibox-content text-left p-md">
+                            @if($seasons->count() > 0)
+                            @foreach($seasons as $key => $value)
                             <div class="m-t-md side">
                                 <div class="p-lg">
-                                    <a href=""><img class="img-responsive img-shadow" src="http://via.placeholder.com/350x240" alt=""></a>
+                                    <a href="{{ url('views') }}/{{ $value->id }}/{{ Request::segment(3) }}"><img class="img-responsive img-shadow" src="{{ env('APP_URL')}}/{{ str_replace('public/', '', $value->cover_image) }}" alt=""></a>
                                 </div>
-                                <p><a href="#"><strong>Season - Episode</strong></a></p>
-                                <p><a href="#">Tanggal Update</a></p>
+                                <p><a href="{{ url('views') }}/{{ $value->id }}/{{ Request::segment(3) }}"><strong>{{ $value->season_name}}</strong></a></p>
+                                <p><a href="{{ url('views') }}/{{ $value->id }}/{{ Request::segment(3) }}">{{ $value->created_at }}</a></p>
                                 <i class="fa fa-eye"> 200.000</i>
                                 <i class="fa fa-heart"> 200</i>
                                 <i class="fa fa-comment"> 56766</i>
                             </div>
-
-                            <div class="m-t-md side">
-                                <div class="p-lg">
-                                    <a href=""><img class="img-responsive img-shadow" src="http://via.placeholder.com/350x240" alt=""></a>
-                                </div>
-                                <p><a href="#"><strong>Season - Episode</strong></a></p>
-                                <p><a href="#">Tanggal Update</a></p>
-                                <i class="fa fa-eye"> 200.000</i>
-                                <i class="fa fa-heart"> 200</i>
-                                <i class="fa fa-comment"> 56766</i>
-                            </div>
-
-                            <div class="m-t-md side">
-                                <div class="p-lg">
-                                    <a href=""><img class="img-responsive img-shadow" src="http://via.placeholder.com/350x240" alt=""></a>
-                                </div>
-                                <p><a href="#"><strong>Season - Episode</strong></a></p>
-                                <p><a href="#">Tanggal Update</a></p>
-                                <i class="fa fa-eye"> 200.000</i>
-                                <i class="fa fa-heart"> 200</i>
-                                <i class="fa fa-comment"> 56766</i>
-                            </div>
-
-                            <div class="m-t-md side">
-                                <div class="p-lg">
-                                    <a href=""><img class="img-responsive img-shadow" src="http://via.placeholder.com/350x240" alt=""></a>
-                                </div>
-                                <p><a href="#"><strong>Season - Episode</strong></a></p>
-                                <p><a href="#">Tanggal Update</a></p>
-                                <i class="fa fa-eye"> 200.000</i>
-                                <i class="fa fa-heart"> 200</i>
-                                <i class="fa fa-comment"> 56766</i>
-                            </div>
-
+                            @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>

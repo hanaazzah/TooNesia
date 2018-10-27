@@ -37,7 +37,8 @@ class PortalController extends Controller
     {
         $seasons_view = $this->season->show($id);
         $title =  $this->comic->show($comic_id)->first()->title;
-        return view('view', compact('seasons_view', 'title'));
+        $seasons = $this->season->getSeasonByComic($comic_id);
+        return view('view', compact('seasons_view', 'title', 'seasons'));
     }
 
     private function setTabContent()
